@@ -11,36 +11,32 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script> 
         //closure
-        function fade(body){
+        function fade(id){
             //local variables
-            var counter = 0 ;
-            var prefix = '.' + mode + ' ' ;
-            
-            //closure-Inner functions
-            return function(name){
-                counter++;
-                console.log('here is your ticket via ' + mode);
-                return 'wlcome to the CTS Tours' + ' ' + counter + prefix + ' -- ' + name + '!';
-            }
+        var dom = document.getElementById(id)    ,
+                level = 1;
+        console.log(dom);
+                // without returning also we can write closures
+            function step(){
+
+                var h=level.toString(16);
+                //js way to access css property , creating color combination using h + h
+                dom.style.backgroundColor = '#FFFF' + h + h;
+                 if(level <15){
+                    level += 1;
+                    setTimeout(step,100);
+                    }
+                 }
+                setTimeout(step,100);
             }   
             
             function main(){
-                console.log('-----Tickets----');
-                var greet = ticket('AIR');
-               
-                console.log(greet('mayank'));
-                console.log(greet('rahul'));
-                //console.log(greet('ram'));
-                
-                var greet = ticket('TRAIN');
-                //console.log('here is your ticket via TRAIN');
-                console.log(greet('Rohit'));
-                //console.log(greet('ram'));
-            }
+                 fade("page");
+             }
         </script>
     </head>
    
-     <body>
+     <body id="page">
         <div>fade operation</div>
         <div>
             <input type="button" value ="airticket" onclick="main()">
