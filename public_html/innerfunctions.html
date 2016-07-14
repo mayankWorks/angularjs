@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Inner functions</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function sayGreet(){
+                // variable inside functions become local scope/life
+                var hai=function(){
+                    console.log('Hai');
+                };
+                var hello=function(){
+                    console.log('Hello');
+                };
+            }
+            function main(){
+                hai
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
