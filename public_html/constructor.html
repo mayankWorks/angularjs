@@ -12,7 +12,8 @@ and open the template in the editor.
         <script>
             //Declare a Class
             function Employee(){
-                //object properties        
+                //object properties  
+                //this keyword makes the property public
                 this.id = 1;
                 this.name="Navya";
                 this.department="DEP";
@@ -25,11 +26,15 @@ and open the template in the editor.
             
             function main (){
                 //the above Employee function will be treated as a class only if we use new keyword
-                var emp = new Employee();
+                var emp = null;
+                emp = new Employee();
+                emp.id = 999;
                 console.log('Id '+emp.id);
                 console.log('Name '+emp.name);
                 console.log('Department '+emp.department);
                 console.log('Salary '+emp.processSalary());
+                
+                console.dir(emp);
             }
             
         </script>
