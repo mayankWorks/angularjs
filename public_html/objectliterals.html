@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Object Literals</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             
+        // this variable employee will hold the literal
+            // we need not use this keyword bcz it is implicit
+            // we cannot have private variables    
+        // this indicates object below
+            var employee = {
+                id:100,
+                name:'mayank',
+                // HAS a relations ship creation below
+                address:{
+                    street:'10th stree',
+                    city:'bangalore',
+                    county:{
+                        name:'India'
+                    }
+                },
+                processSalary : function(){
+                    return 100;
+                }
+            }; 
+            
+            function main (){
+            
+            console.log('id '+employee.id);
+            console.log('name '+employee.name);
+            console.log('street '+employee.address.street);
+            console.log('city '+employee.address.city);
+            console.log('county name '+employee.address.county.name);
+                
+            // the properties of its DOM representation are printed
+            console.dir(employee);
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div><input type = "button" value = "Object Literals" onclick="main()" />  </div>
+    </body>
+</html>
