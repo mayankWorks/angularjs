@@ -12,7 +12,10 @@ and open the template in the editor.
         <script>
             //Declare a Class
             function Employee(){
-                //object properties  
+                // private variables
+                var salary = 1000.00;
+                
+                //object properties and methods
                 //this keyword makes the property public
                 this.id = 1;
                 this.name="Navya";
@@ -20,8 +23,13 @@ and open the template in the editor.
                 
                 //Methods
                 this.processSalary=function(){
-                    return 1000000.00;
+                    //return 1000000.00;
+                    return salary * calculateWorkingDays() ;
                 }                
+                //private method
+                var calculateWorkingDays = function(){
+                    return 30;
+                }
             }
             
             function main (){
