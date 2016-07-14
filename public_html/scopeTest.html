@@ -16,10 +16,27 @@ and open the template in the editor.
                 console.log(company);
                 console.log(address);
             }    
+        function getPonyFullName(){
+           /* var name = 'honey';
+            if(pony){
+                name = 'champion'+pony;
+                return name;
+            }
+            return pony.name;*/
+            return function(){
+                var message = 'Hello';
+                return message;
+            };
+        }
+            
         function main(){
                 console.log(company);
                 printCompany();
-            }
+                //console.log(getPonyFullName('-test'));
+                var h = getPonyFullName();
+                var msg = h();
+                console.log(msg);
+    }
             
         </script>
     </head>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>closure</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script> 
+             
+        //closure
+        function greeter(salutation){
+            //local variables
+            var counter = 0 ;
+            var prefix = '.' + salutation + ' ' ;
+        
+            //closure-Inner functions
+            return function(name){
+                counter++;
+                return counter + prefix + name + '!';
+            }
+            }   
+            
+            function main(){
+                var greet = greeter('Mr');
+                console.log(greet('mayank'));
+                console.log(greet('ram'));
+            }
+        </script>
+    </head>
+    <body>
+        <div>closure</div>
+        <div>
+            <input type="button" value ="closure" onclick="main()">
+        </div>
+    </body>
+</html>
