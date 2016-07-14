@@ -10,16 +10,28 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
+            function Country(){
+                this.countrycode = 'IND';
+                this.countryname = 'INDIA';
+            }
+            function Address(){
+                this.doorno = '123';
+                this.street = '10th street';
+                this.city = 'chennai';
+                // HAS A relationship
+                this.country = new Country();//nested objects
+            }
+            
             //Declare a Class
             function Employee(){
                 // private variables
                 var salary = 1000.00;
-                
                 //object properties and methods
                 //this keyword makes the property public
                 this.id = 1;
                 this.name="Navya";
                 this.department="DEP";
+                this.address = new Address();
                 
                 //Methods
                 this.processSalary=function(){
@@ -41,7 +53,11 @@ and open the template in the editor.
                 console.log('Name '+emp.name);
                 console.log('Department '+emp.department);
                 console.log('Salary '+emp.processSalary());
+                console.log('city '+emp.address.city);
+                console.log('street '+emp.address.street);
+                console.log('country '+emp.address.country.countryname);
                 
+                // the properties of its DOM representation are printed
                 console.dir(emp);
             }
             
