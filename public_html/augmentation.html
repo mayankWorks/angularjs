@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>augmentation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+             
+           function Person(){
+               this.firstName='admin';
+           }  
+             
+           //Empty object 
+           function Employee(){
+             this.id=10;
+            }
+            //Augment employee
+            Employee.prototype.name='mayank';
+            //Augment Super
+            Object.prototype.version='1.0';
+       
+       //Literal augmentation
+    var rootScope={
+           name:'root'
+       };   
+    var scope={
+           id:1
+       };
+       
+       //Inherit scope with rootscope
+       scope._proto_ = rootScope;
+       
+            function main (){
+            var employee = new Employee();
+            
+            //inheritance
+            employee._proto_=new Person();
+            console.dir(employee);
+            console.log(employee.id);
+            console.log(employee.name + ' ' + employee.firstName);// kind of overriding
+            console.log(employee.version);// kind of overriding
+            
+            //print literal structure
+            consile.dir(scope);
+            
+            //Augment literal
+            scope.name='mayank';
+            scope.address='bangalore';
+            scope.order={
+                id:1,
+                product:'Iphone'
+            };
+           
+            } 
+        </script>
+    </head>
+    <body>
+        <div><input type = "button" value = "augmentation" onclick="main()" />  </div>
+    </body>
+</html>
+
