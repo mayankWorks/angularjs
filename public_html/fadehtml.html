@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>fade operation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script> 
+        //closure
+        function fade(body){
+            //local variables
+            var counter = 0 ;
+            var prefix = '.' + mode + ' ' ;
+            
+            //closure-Inner functions
+            return function(name){
+                counter++;
+                console.log('here is your ticket via ' + mode);
+                return 'wlcome to the CTS Tours' + ' ' + counter + prefix + ' -- ' + name + '!';
+            }
+            }   
+            
+            function main(){
+                console.log('-----Tickets----');
+                var greet = ticket('AIR');
+               
+                console.log(greet('mayank'));
+                console.log(greet('rahul'));
+                //console.log(greet('ram'));
+                
+                var greet = ticket('TRAIN');
+                //console.log('here is your ticket via TRAIN');
+                console.log(greet('Rohit'));
+                //console.log(greet('ram'));
+            }
+        </script>
+    </head>
+   
+     <body>
+        <div>fade operation</div>
+        <div>
+            <input type="button" value ="airticket" onclick="main()">
+        </div>
+    </body>
+</html>
